@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/AAROC/AAROC.certificates.svg?branch=master)](https://travis-ci.org/AAROC/AAROC.certificates)
+
 AAROC.certificates
 =========
 
