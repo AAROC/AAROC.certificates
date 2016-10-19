@@ -23,6 +23,7 @@ install:
 
 script:
   # Basic role syntax check
+  - ansible-galaxy install AAROC.certificates
   - ansible-playbook -c local tests/test.yml -i tests/inventory --syntax-check
   - ansible-playbook -c local tests/test.yml -i tests/inventory
 
