@@ -12,14 +12,13 @@
 
     - name: EGI trustanchors present
       yum:
-        name: "{{ igtf_repo_url }}/{{ igtf_release_name }}-{{ igtf_release_version }}.rpm"
+        name: "{{ igtf_repo_url }}/{{ igtf_release_name }}-{{ igtf_release_version }}.noarch.rpm"
         state: present
       tags:
         - repos
         - IGTF
         - download
   when: ansible_os_family == 'RedHat'
-  become: true
 
 - block:
     - name: Add EUGridPMA key
@@ -55,7 +54,6 @@
         - IGTF
         - download
   when: ansible_os_family == 'Debian'
-  become: true
 
 
 - name: Create /etc/grid-security directory
@@ -77,7 +75,7 @@
     group: root
     mode: 0644
     force: true
-  when: (hostvars['{{ inventory_hostname }}'].needs_certificate == 'true') and (needs_certificate is defined)
+  when:  needs_certificate == 'true'
   tags:
     - certificates
 
@@ -88,7 +86,7 @@
     owner: root
     group: root
     mode: 0400
-  when: (hostvars['{{ inventory_hostname }}'].needs_certificate == 'true') and (needs_certificate is defined)
+  when: needs_certificate == 'true'
   tags:
     - certificates
 
