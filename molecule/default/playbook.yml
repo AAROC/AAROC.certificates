@@ -1,0 +1,5 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - {role: AAROC.certificates, needs_certificate: false}
