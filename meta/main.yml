@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: Bruce Becker
   description: A role to contextualise the security and trust anchors for hosts in AAROC inventories.
@@ -6,15 +7,15 @@ galaxy_info:
   min_ansible_version: 2.2
 
   platforms:
-  - name: Ubuntu
-    versions:
-    - all
-  - name: Debian
-    versions:
-    - all
-  - name: EL
-    versions:
-    - all
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: EL
+      versions:
+        - all
 
 
   galaxy_tags:
@@ -23,4 +24,3 @@ galaxy_info:
     - AAROC
 
 dependencies: []
-  

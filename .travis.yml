@@ -4,16 +4,19 @@ python: "2.7"
 
 # Use the new container infrastructure
 sudo: true
-
+services:
+  - docker
 # Install ansible
 addons:
   apt:
     packages:
-    - python-pip
+      - python-pip
 
 install:
   # Install ansible
   - pip install ansible
+  - pip install docker-py
+  - pip install molecule
 
   # Check ansible version
   - ansible --version
@@ -23,9 +26,10 @@ install:
 
 script:
   # Basic role syntax check
-  - ansible-galaxy install AAROC.certificates
-  - ansible-playbook -c local tests/test.yml -i tests/inventory --syntax-check
-  - ansible-playbook -c local tests/test.yml -i tests/inventory
+  # - ansible-galaxy install AAROC.certificates
+  # - ansible-playbook -c local tests/test.yml -i tests/inventory --syntax-check
+  # - ansible-playbook -c local tests/test.yml -i tests/inventory
+  - molecule test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

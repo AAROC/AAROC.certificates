@@ -61,7 +61,7 @@
     path: /etc/grid-security/certificates
     owner: root
     group: root
-    mode: 775
+    mode: 0775
     state: directory
     force: true
   tags:
@@ -75,7 +75,7 @@
     group: root
     mode: 0644
     force: true
-  when:  needs_certificate == 'true'
+  when: needs_certificate == 'true'
   tags:
     - certificates
 
