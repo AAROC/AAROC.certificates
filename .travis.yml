@@ -18,17 +18,7 @@ install:
   - pip install docker-py
   - pip install molecule
 
-  # Check ansible version
-  - ansible --version
-
-  # Create ansible.cfg with correct roles_path
-  - printf '[defaults]\nroles_path=../' >ansible.cfg
-
 script:
-  # Basic role syntax check
-  # - ansible-galaxy install AAROC.certificates
-  # - ansible-playbook -c local tests/test.yml -i tests/inventory --syntax-check
-  # - ansible-playbook -c local tests/test.yml -i tests/inventory
   - molecule test
 
 notifications:
