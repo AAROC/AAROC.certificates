@@ -1,25 +1,19 @@
----
 language: python
-python: "2.7"
-
-# Use the new container infrastructure
+python: '2.7'
 sudo: true
 services:
-  - docker
-# Install ansible
+- docker
 addons:
   apt:
     packages:
-      - python-pip
-
+    - python-pip
 install:
-  # Install ansible
-  - pip install ansible
-  - pip install docker-py
-  - pip install molecule
-
+- pip install ansible
+- pip install docker-py
+- pip install molecule
 script:
-  - molecule test
-
+- molecule test
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  slack:
+    secure: MwOkGZSDu5oH18/en1tv/mf6DuBferIuvY+PzBnIYlwuRDF65pBo3zywHekY50lF6MQUF0t3+Tijzw6t9KmVgt7bjB0xSNOn/euxXnLYXI1LGbSFDCjGV/73z3dsZ2nUqY86hlUN4CTMaKQJR9vlX+3IQZPJl7Cd/Lx1cMfecgIINhYJZCusjWTlYTwhbP3nnJ1XbbW9Lk51xlPW1kkJPBafef++jeil/K5Hbk4bkwOQnC+3jz8go+JKVy3NodcjFv4vjnXRxkS09aFTee24B8dcJ7WCY9j39gc9m+Kk9nS6ErlvZkx4RhtIjR45phumDTf1BKA3d9iyfBWYFheFgdr6nEmzQKwd5DcMUHp2cuPeG9Owb4Nbcl7ZdICyRlgBjP8w1iLRRFXQ7nj/1s0NSwoCPDTOCih57QqRvkF8NB3DwqeDwhx4JANAioV4LSVagBlvWIipNhszXsl6KVWnTDJ4iHt7GdjuZWj21IWL1UioO1W24dVLAC5pYyn61dFeW0V6fbIB67Hkz8FIBtrUWdm2xdgDXDzhAXsuRYX0reYmN2iq1SAXEnYnB/oV8stZMXwpEaOjkhVI+mWFGUIJvldpVKtxmPbl2/jUPDib6oy8x3zGMrA3uY91+Fll2avUxq0phyrRqWWxBXvyq+jr1oFPYJ9CNdGU1eMyVjBo9nE=
