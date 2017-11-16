@@ -14,7 +14,7 @@ Requires escalation priveliges on the managed hosts, since it will install packa
 Role Variables
 --------------
 
-None yet.
+  - `needs_cert` : does this host need a host certificate ? (truthy)
 
 Dependencies
 ------------
@@ -28,7 +28,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role:AAROC.certificates, become: true }
+         - { role:AAROC.certificates, become: true, needs_cert: false }
 
 License
 -------
