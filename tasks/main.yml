@@ -48,13 +48,12 @@
         name: ca-policy-egi-core
         state: present
       retries: 2
-    # should have a when file state==abset here
+      # should have a when file state==abset here
       tags:
         - repos
         - IGTF
         - download
   when: ansible_os_family == 'Debian'
-
 
 - name: Create /etc/grid-security directory
   file:
@@ -89,30 +88,3 @@
   when: needs_certificate == 'true'
   tags:
     - certificates
-
-# - name: Copy over CA certs by hand
-#   copy:
-#     src: "etc/grid-security/certificates/{{ item }}"
-#     dest: "/etc/grid-security/certificates/{{ item }}"
-#   with_items:
-#     - 16b5ebeb.0
-#     - 16b5ebeb.crl_url
-#     - 16b5ebeb.r0
-#     - 16b5ebeb.signing_policy
-#     - 8c65b6c6.0
-#     - 8c65b6c6.crl_url
-#     - 8c65b6c6.r0
-#     - 8c65b6c6.signing_policy
-#     - AAROC.0
-#     - AAROC.crl_url
-#     - AAROC.r0
-#     - AAROC.signing_policy
-#   tags:
-#     - certificates
-#
-# - name: Add SAGrid VO certs and LSC files
-#   copy:
-#     src: etc/grid-security/vomsdir
-#     dest: /etc/grid-security/
-#     owner: root
-#     group: root
