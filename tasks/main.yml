@@ -55,11 +55,6 @@
         - download
   when: ansible_os_family == 'Debian'
 
-- name: ensure that fetch-crl is present
-  package:
-    name: fetch-crl
-    state: present
-
 - name: Create /etc/grid-security directory
   file:
     path: /etc/grid-security/certificates
