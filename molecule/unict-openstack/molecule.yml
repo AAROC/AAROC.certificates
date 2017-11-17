@@ -1,0 +1,21 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: openstack
+lint:
+  name: yamllint
+platforms:
+  - name: CEntOS-7
+    image: CentOS7
+    flavor: small
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+scenario:
+  name: unict-openstack
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
