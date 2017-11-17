@@ -14,6 +14,11 @@ def test_hosts_file(host):
     assert f.user == 'root'
     assert f.group == 'root'
 
+def test_hosts_package(host):
+    """Check that the package is installed"""
+    package = host.package('ca-policy-egi-core')
+
+    assert package.is_installed
 
 def test_hosts_grid_security(host):
     """
