@@ -2,5 +2,5 @@ hostkey*
 molecule/default/tests/__pycache__/
 *.pyc
 .vscode/
-molecule/default/.molecule
-molecule/default/.cache
+molecule/*/.cache/
+molecule/*/.molecule
