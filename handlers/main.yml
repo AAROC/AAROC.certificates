@@ -1,2 +1,4 @@
 ---
 # handlers file for AAROC.certificates
+- name: Run fetch-crl
+  command: fetch-crl

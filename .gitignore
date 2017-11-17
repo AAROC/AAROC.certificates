@@ -3,3 +3,4 @@ molecule/default/tests/__pycache__/
 *.pyc
 .vscode/
 molecule/default/.molecule
+molecule/default/.cache

@@ -6,11 +6,14 @@ AAROC.certificates
 
 A role to contextualise the security and trust anchors for hosts in AAROC inventories. This is an evolution of the previous `certificates` role in @AAROC/DevOps/Ansible/roles , but created with Ansible Galaxy so as to promote re-use.
 
+This role is to be used on AAROC sites wishing to ensure that the certificate roll is up to date. 
+
 ## IGTF and EGI Trust Anchor
 
 This role will install the necessary files for the host to trust others in the EGI and IGTF circle. 
 Files installed are the public keys of the certificate authorities which make up these PMA's. 
 For more information, see [IGTF](http://igtf.net) and [EGI](http://repository.egi.eu/sw/production/cas/1/current/) websites.
+
 
 
 Requirements
