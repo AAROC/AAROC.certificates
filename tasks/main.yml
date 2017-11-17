@@ -48,7 +48,7 @@
         name: ca-policy-egi-core
         state: present
       retries: 2
-    # should have a when file state==abset here
+      # should have a when file state==abset here
       tags:
         - repos
         - IGTF
@@ -88,4 +88,3 @@
   when: needs_certificate == 'true'
   tags:
     - certificates
-
