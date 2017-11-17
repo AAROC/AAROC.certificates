@@ -8,6 +8,7 @@ For the full guide on contributing to @AAROC Ansible roles, see https://github.c
   1  Create a branch with your feature or fix
   1. Provide test coverage `molecule/test_default.py` or for your scenario other than default
   1. Send pull requests
+  1. Request a reviewer (usually @brucellino or @bazinski)
   1. Your contributions will be recognised in subsequent releases
   
 # Discussion
