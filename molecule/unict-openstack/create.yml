@@ -2,9 +2,9 @@
 - name: Create
   hosts: localhost
   connection: local
-  gather_facts: False
-  #no_log: "{{ not lookup('env', 'MOLECULE_DEBUG') | bool }}"
-  no_log: false
+  gather_facts: 'False'
+  # no_log: "{{ not lookup('env', 'MOLECULE_DEBUG') | bool }}"
+  no_log: 'false'
   vars:
     molecule_file: "{{ lookup('env', 'MOLECULE_FILE') }}"
     molecule_instance_config: "{{ lookup('env', 'MOLECULE_INSTANCE_CONFIG') }}"
@@ -15,10 +15,10 @@
     security_group_name: molecule
     security_group_description: "Security group for testing Molecule"
     security_group_rules:
-      - { proto: 'tcp', port: "{{ ssh_port }}", cidr: '0.0.0.0/0' }
-      - { proto: 'icmp', port: -1, cidr: '0.0.0.0/0' }
-      - { ethertype: 'IPv4', group: "{{ security_group.id }}" }
-      - { ethertype: 'IPv6', group: "{{ security_group.id }}" }
+      - {proto: 'tcp', port: "{{ ssh_port }}", cidr: '0.0.0.0/0'}
+      - {proto: 'icmp', port: -1, cidr: '0.0.0.0/0'}
+      - {ethertype: 'IPv4', group: "{{ security_group.id }}"}
+      - {ethertype: 'IPv6', group: "{{ security_group.id }}"}
     neutron_network_name: aarroc-net
     keypair_name: molecule_key
     keypair_path: "{{ lookup('env', 'MOLECULE_EPHEMERAL_DIRECTORY') }}/ssh_key"
